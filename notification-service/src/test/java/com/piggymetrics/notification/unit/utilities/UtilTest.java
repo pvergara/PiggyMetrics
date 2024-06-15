@@ -7,6 +7,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SuppressWarnings("ConstantValue")
 class UtilTest {
 
+//    Fast
+//    Isolated
+//    Repeatable
+//    Self-validating
+//    Timely
+
     @Test
     void whenIPassTrueToChangeBooleanThenItReturnsFalse() {
         boolean actual = Util.changeBoolean(true);
