@@ -13,4 +13,11 @@ class UtilTest {
 
         assertThat(actual).isFalse();
     }
+
+    @Test
+    void whenIPassFalseToChangeBooleanThenItReturnsTrue() {
+        boolean actual = Util.changeBoolean(false);
+
+        assertThat(actual).isTrue();
+    }
 }
