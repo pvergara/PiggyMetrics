@@ -25,9 +25,17 @@ class UtilTest {
     void whenIPassABCToReserveStringThenItReturnsCBA(){
         //Red
         //Green
-        //Refactor
+        //Refactor...
         String actual = Util.reverse("ABC");
 
         assertThat(actual).isEqualTo("CBA");
+    }
+
+    @Test
+    void whenIPassABCDToReserveStringThenItReturnsDCBA(){
+        //...Refactor
+        String actual = Util.reverse("ABCD");
+
+        assertThat(actual).isEqualTo("DCBA");
     }
 }

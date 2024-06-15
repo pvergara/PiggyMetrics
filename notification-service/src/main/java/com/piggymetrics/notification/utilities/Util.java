@@ -8,6 +8,6 @@ public class Util {
     }
 
     public static String reverse(String parameter) {
-        return "CBA";
+        return new StringBuilder(parameter).reverse().toString();
     }
 }
