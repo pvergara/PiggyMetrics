@@ -8,6 +8,9 @@ public class Util {
     }
 
     public static String reverse(String parameter) {
+        if (parameter == null) {
+            return null;
+        }
         return new StringBuilder(parameter).reverse().toString();
     }
 }

@@ -38,4 +38,25 @@ class UtilTest {
 
         assertThat(actual).isEqualTo("DCBA");
     }
+
+    @Test
+    void whenIPassABAToReserveStringThenItReturnsABA(){
+        var actual = Util.reverse("ABA");
+
+        assertThat(actual).isEqualTo("ABA");
+    }
+
+    @Test
+    void whenIPassABBAToReserveStringThenItReturnsABBA(){
+        var actual = Util.reverse("ABBA");
+
+        assertThat(actual).isEqualTo("ABBA");
+    }
+
+    @Test
+    void whenIPassNullToReserveStringThenItReturnsABC(){
+        String actual = Util.reverse(null);
+
+        assertThat(actual).isNull();
+    }
 }
