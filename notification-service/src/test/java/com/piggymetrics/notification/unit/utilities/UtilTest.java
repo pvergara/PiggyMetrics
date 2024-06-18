@@ -4,6 +4,8 @@ package com.piggymetrics.notification.unit.utilities;
 import com.piggymetrics.notification.utilities.Util;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SuppressWarnings("ConstantValue")
@@ -65,6 +67,20 @@ class UtilTest {
         String actual = Util.reverse(null);
 
         assertThat(actual).isNull();
+    }
+
+    @Test
+    void sortingACollection(){
+        var actual = Util.sort(List.of(7, 3, 6, 2, 1, 2));
+
+        assertThat(actual).isEqualTo(List.of(1,2,2,3,6,7));
+    }
+
+    @Test
+    void sortingACollectionStrings(){
+        var actual = Util.sort(List.of("7", "3", "6", "2", "1", "2"));
+
+        assertThat(actual).isEqualTo(List.of("1","2","2","3","6","7"));
     }
 
     @Test
