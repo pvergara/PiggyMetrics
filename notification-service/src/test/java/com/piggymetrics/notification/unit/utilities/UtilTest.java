@@ -1,15 +1,13 @@
 package com.piggymetrics.notification.unit.utilities;
 
+
 import com.piggymetrics.notification.utilities.Util;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SuppressWarnings("ConstantValue")
 class UtilTest {
-
 //    Fast
 //    Isolated
 //    Repeatable
@@ -70,16 +68,8 @@ class UtilTest {
     }
 
     @Test
-    void sortingACollection(){
-        var actual = Util.sort(List.of(7, 3, 6, 2, 1, 2));
-
-        assertThat(actual).isEqualTo(List.of(1,2,2,3,6,7));
-    }
-
-    @Test
-    void sortingACollectionStrings(){
-        var actual = Util.sort(List.of("7", "3", "6", "2", "1", "2"));
-
-        assertThat(actual).isEqualTo(List.of("1","2","2","3","6","7"));
+    void explainingBranches(){
+        int actual = Util.explainingBranches(1);
+        assertThat(actual).isEqualTo(15);
     }
 }

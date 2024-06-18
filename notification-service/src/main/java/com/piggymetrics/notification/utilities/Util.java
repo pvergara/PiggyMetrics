@@ -20,4 +20,16 @@ public class Util {
     public static <T> Collection<T> sort(Collection<T> parameters) {
         return parameters.stream().sorted().collect(Collectors.toList());
     }
-}
+
+    public static int explainingBranches(int parameter) {
+        if (parameter == 1) {
+            int aux = 0;
+            int i=0;
+            for (; i < 15; i++) {
+                aux++;
+            }
+            return aux;
+        }
+
+        return (int) Math.pow(parameter, 2);
+    }}
