@@ -75,4 +75,11 @@ class UtilTest {
 
         assertThat(actual).isEqualTo(List.of(1,2,2,3,6,7));
     }
+
+    @Test
+    void sortingACollectionStrings(){
+        var actual = Util.sort(List.of("7", "3", "6", "2", "1", "2"));
+
+        assertThat(actual).isEqualTo(List.of("1","2","2","3","6","7"));
+    }
 }
