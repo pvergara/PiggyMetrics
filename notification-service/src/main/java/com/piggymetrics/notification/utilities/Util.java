@@ -1,5 +1,8 @@
 package com.piggymetrics.notification.utilities;
 
+import java.util.Collection;
+import java.util.stream.Collectors;
+
 public class Util {
     private Util() {}
 
@@ -12,5 +15,9 @@ public class Util {
             return null;
         }
         return new StringBuilder(parameter).reverse().toString();
+    }
+
+    public static <T> Collection<T> sort(Collection<T> parameters) {
+        return parameters.stream().sorted().collect(Collectors.toList());
     }
 }
