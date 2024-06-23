@@ -63,7 +63,7 @@ class UtilTest {
     }
 
     @Test
-    void whenIPassNullToReserveStringThenItReturnsABC(){
+    void whenIPassNullToReserveStringThenItReturnsNull(){
         String actual = Util.reverse(null);
 
         assertThat(actual).isNull();
