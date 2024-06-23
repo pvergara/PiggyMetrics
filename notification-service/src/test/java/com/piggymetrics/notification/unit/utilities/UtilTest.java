@@ -7,8 +7,10 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@SuppressWarnings("ConstantValue")
+@SuppressWarnings({"ConstantValue", "DataFlowIssue"})
 class UtilTest {
 //    Fast
 //    Isolated
@@ -81,6 +83,13 @@ class UtilTest {
         var actual = Util.sort(List.of("7", "3", "6", "2", "1", "2"));
 
         assertThat(actual).isEqualTo(List.of("1","2","2","3","6","7"));
+    }
+
+    @Test
+    void sortingStringUsingNull(){
+        assertThrows(NullPointerException.class,()->Util.sort(null));
+
+        assertThatThrownBy(()->Util.sort(null)).isInstanceOf(NullPointerException.class);
     }
 
     @Test
