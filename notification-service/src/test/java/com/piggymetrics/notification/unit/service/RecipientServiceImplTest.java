@@ -30,19 +30,23 @@ class RecipientServiceImplTest {
 
     @Test
     void findByAccountNameUsingMockRepositoryAsStub() {
-        //Using mock repository as Stub
+        //Act: Using mock repository as Stub
         Recipient actual = this.service.findByAccountName("admin");
 
+        //Assertions
         assertThat(actual).isNull();
     }
 
     @Test
     void findByAccountNameUsingMockRepositoryAsMock() {
-        //Using mock repository as mock
+        //Arrange: Using mock repository as mock
         Recipient recipient = new Recipient();
-        when(this.mockRepository.findByAccountName("admin")).thenReturn(recipient);
+        when(this.mockRepository.findByAccountName("admin")).thenReturn(recipient);//<<<--- Mocking!!!
+
+        //Act
         Recipient actual = this.service.findByAccountName("admin");
 
+        //Assertion
         assertThat(actual).isEqualTo(recipient);
     }
 
